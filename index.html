@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- ??? всегда вписвал ru-RU -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Название сайта и фавиконка -->
+    <link rel="icon" type="image/svg" href="img/logo/Logo_svg.svg" />
+    <title>Frezer Tokarev. Металлообработка в Нижнем Новгороде.</title>
+    
+    
+    <!-- подключение шрифтов с Гугл фонтс-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <!-- подключение FontAwesome для значков-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Подключение стилей -->
+    <link href="styles/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Что бы не потерять почту mail@frezer-tokarev.ru -->
+    <header>
+        <div class="logo-container">
+            <img src="/img/logo/Logo_svg.svg" />
+        </div>
+        <div class="header-order-btn" id="order-btn">
+            <a href="" id="order-btn"><i class="fa-regular fa-envelope"></i>Заказать проект</a>
+        </div>
+    </header>
+    <main>
+        <section class="main-information">
+            <div class="container">
+                <div>
+                    <h1>Металлообработка в <br>Нижнем Новгороде</h1>
+                    <p class="subheading">Точность. Гибкость.<br>Качество</p>
+                </div>
+                <ul>
+                    <li>Токарные работы</li>
+                    <li>Фрезерные работы</li>
+                    <li>Фрезерные работы ЧПУ</li>
+                    <li>Сварка</li>
+                    <li>Лазерная резка</li>
+                    <li>Слесарные работы</li>
+                    <li>Электроэрозия</li>
+                </ul>
+            </div>
+            <div class="nickname">
+                <p>Frezer Tokarev</p>
+            </div>
+        </section>
+
+        <section class="short-description">
+            <h2>При реализации вашей идеи или проекта у нас, вы получаете:</h2>
+            <ul>
+                <li>Соответствие готового изделия вашему техническому заданию</li>
+                <li>Эффективные решения для ваших нестандартных задач</li>
+                <li>Быстрое рассмотрение и согласование объема работ и стоимости</li>
+            </ul>
+            <p><a href="" id="order-btn">Свяжитесь с нами</a> сейчас для получения расчета стоимости проекта.</p>
+        </section>
+
+        <section class="full-description">
+            <h3>Какие работы выполняем</h3>
+            <div class="desc-block" id="type-of-work-el">
+                <!-- Тут JS блок -->
+            </div>
+            <button class="order-btn" id="order-btn">Получить расчет стоимости</button>
+        </section>
+
+        <section class="modal-order" id="modal-order">
+            <h4>Как отправить запрос?</h4>
+            <p>Для быстрого рассмотрения вашего проекта, пожалуйста, отправьте нам письмо на электронную почту:</p> 
+            <div class="copy-email-btn" id="copy-email">mail@frezer-tokarev.ru <i class="fa-regular fa-copy" id="copy-email-btn"></i></div>
+            <div id="email-copied">Почта успешно скопирована в буфер!</div>
+            <p><span>Обязательно:</span></p>
+            <ul>
+                <li>Приложите чертежи, эскизы или техническое задание.</li>
+                <li>Укажите ваши контактные данные для обратной связи.</li>
+            </ul>
+            <button class="close-btn" id="close-modal-btn">закрыть</button>
+        </section>
+        
+        <footer>
+            <p class="">Понравился сайт?
+                <a href="https://t.me/dbatrakov" target="_blank">   
+                <i class="fa-brands fa-telegram"></i>   Напиши!</a></p>
+        </footer>
+    </main>
+    <script src="index.js" type="module" defer></script>
+</body>
+</html>

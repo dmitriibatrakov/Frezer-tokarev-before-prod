@@ -1,0 +1,458 @@
+*, *::before, *::after {
+    box-sizing: border-box;    
+}
+
+*{
+    margin: 0; 
+    padding: 0; 
+}
+
+body {
+    max-width: 1920px;
+    background-color: #FFFDF5;
+    margin: 0 auto;
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 1.5rem;
+    color: #282828;
+
+    /* ГЛОБАЛЬНЫЕ СТИЛИЗАЦИИ */
+header, 
+.main-information, 
+.short-description, 
+.full-description,
+.modal-order {
+    padding-left: 20vw;
+    padding-right: 20vw;
+}
+
+.short-description, .full-description {
+    text-shadow: 0 0 2px #a3a3a3;
+}
+
+    /* СТИЛИЗАЦИЯ БЛОКА HEADER */
+header {
+    padding-top: 0.3vw;
+    padding-bottom: 0.3vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+}
+header img {
+    width: 5vw;
+    display: block;
+}
+
+header a {
+    text-decoration: none;
+    color: black;
+}
+
+header a:hover,
+header a:focus {
+    transition: 0.3s;
+    text-decoration: underline;
+    background-color: #0000000c;
+    border-radius: 5px;
+}
+    /* конец стилизации header */
+
+
+    /* СТИЛИЗАЦИЯ БЛОКА MAIN */
+    /* стилизация main-information */
+.main-information {
+    position: relative;
+    background-color: black;
+    overflow: hidden;
+    background-size: cover;
+    --bg-image: url('../img/header-photo/header_photo_1.jpg');
+
+    display: flex;
+    flex-direction: column;
+    max-height: 690px;
+    color: #FFFDF5;
+    text-shadow: 0 0 30px black;
+    padding-top: 4vh;
+}  
+
+.main-information::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: opacity 1s ease-in-out;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+/* класс .fade-out добавляется и убирается только через CSS*/
+.main-information.fade-out::before {
+    opacity: 0;
+}
+
+.main-information .container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4vh;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 4.5rem;
+    margin-bottom: 5vh;
+    line-height: 1.2em;
+}
+
+.main-information ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.nickname {
+    margin: 0 auto;
+    border-bottom: 7px solid #FFFDF5;
+    z-index: 1;
+}
+
+/* стилизация short-description */
+.short-description {
+    padding-top: 4vh;
+}
+
+h2 {
+    font-size: 2.25rem;
+    font-weight: 600;
+    margin-bottom: 2.5vh;
+}
+
+.short-description ul {
+    padding-left: 7vh;
+    margin-bottom: 2vh;
+}
+
+.short-description p a {
+    text-decoration: none;
+    color: #282828;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.short-description p a:hover {
+    color: #525a4d;
+    text-decoration: underline;
+    transition: 0.3s;
+}       
+
+/* стилизация full-description */
+
+
+h3 {
+    padding-left: 3vh;
+    font-size: 2.75rem;
+    font-weight: 500;
+    margin: 2vh 0;
+}
+
+.desc-block {
+    display: grid;
+    justify-content: space-around;
+    gap: 1.5vw;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-auto-rows: auto;
+    grid-auto-flow: dense;
+}
+
+.desc-block div {
+    transition: 0.3s;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px #cfcfcf;
+    border: 0.5px solid #cfcfcf;
+    max-width: 900px;
+    padding: 2vw;
+}
+
+.desc-block div:hover {
+    box-shadow: 10px 10px 2px #acacac;
+    border: 0.5px solid #acacac;
+}
+
+h4 {
+    margin-bottom: 2vh;
+    font-size: 2.25rem;
+    font-weight: 600;
+    line-height: 1em;
+}
+
+.full-description .order-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5em auto;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-family: inherit;
+    font-weight: 600;
+    height: 2em;
+    width: 20em;
+    background-color: #C5C0B2;
+    box-shadow: 5px 5px 5px #cfcfcf;
+    cursor: pointer;
+}
+
+.full-description .order-btn:hover,
+.full-description .order-btn:focus {
+    background-color: #A8B8A0;
+    box-shadow: 5px 5px 2px #acacac;
+    transition: 0.3s;
+}
+
+.full-description .order-btn:active {
+    color: #ffffff;
+    background-color: #282828;
+}
+
+    /* Модальное всплывающее окно */
+.modal-order {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 900px;
+    width: 60%;
+    height: max-content;
+    border-radius: 10px;
+    box-shadow: 0 0 200vw #000000;
+    background-color: #FFFDF5;
+    padding: 4vw 5vw;
+    z-index: 1;
+}
+
+.copy-email-btn {
+    font-weight: 500;
+    margin: 0.5vw 0;
+    text-decoration: underline;
+    cursor: pointer;
+    width: max-content;
+}
+
+.copy-email-btn:hover,
+.copy-email-btn:focus {
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.modal-order ul {
+    padding-left: 2vw;
+}
+
+.modal-order .close-btn {
+   font-family: inherit;
+   background-color: #FFFDF5;
+   border: none;
+    position: absolute;
+   top: 2vw;
+   right: 4vw;
+   text-decoration: underline;
+   color: #a3a3a3;
+   font-weight: 300;
+}
+
+.modal-order .close-btn:hover,
+.modal-order .close-btn:focus {
+    color: #000000;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+#email-copied {
+    display: none;
+    color: #547247;
+    font-weight: 500;
+    margin: 0.5vw 0;
+    text-decoration: underline;
+}
+
+footer {
+    margin-top: 5em;
+    display: flex;
+    justify-content: end;
+    background-color: #282828;
+    color: #C5C0B2;
+    font-size: 0.75rem;
+    padding: 1em 3em;
+    box-shadow: 0 0 15px #000000;
+}
+
+footer a {
+    color: #C5C0B2;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+footer a:hover {
+    color: #FFFDF5;
+    transition: 0.3s;
+}
+
+/* Медиазапросы */
+
+@media (max-width: 1695px) and (min-width: 1281px) {
+    header, 
+    .main-information, 
+    .short-description, 
+    .full-description,
+    .modal-order {
+        font-size: 1.375rem;
+    }
+
+    header, 
+    .main-information, 
+    .short-description, 
+    .full-description {
+        padding-left: 15vw;
+        padding-right: 15vw;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    .short-description h2 {
+        font-size: 1.875rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 1280px) and (min-width: 769px) {
+    header, 
+    .main-information, 
+    .short-description, 
+    .full-description,
+    .modal-order {
+        font-size: 1.125rem;
+    }
+
+    header, 
+    .main-information, 
+    .short-description, 
+    .full-description {
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .short-description h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+    }
+    .desc-block {
+        gap: 2.5vw;
+        grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+
+    }
+}
+
+@media (max-width: 768px) {
+       header, 
+        .main-information, 
+        .short-description, 
+        .full-description,
+        .modal-order {
+            font-size: 1rem;
+        }
+
+        header, 
+        .main-information, 
+        .short-description, 
+        .full-description {
+            padding-left: 7vw;
+            padding-right: 7vw; 
+        }
+
+    .modal-order {
+        width: 90%;
+    }
+
+    .main-information ul {
+        display: none;
+    }
+    h1, .main-information .container{
+        margin-bottom: 1vw;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    .short-description {
+        padding-top: 1vw;
+    }
+
+    .short-description h2 {
+        font-size: 1.2rem;
+        margin-bottom: 1vw;
+    }
+
+    .short-description ul {
+        padding-left: 7vw;
+        margin-bottom: 2vw;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+        margin: 2vw 0;
+    }
+
+    h4 {
+        font-size: 1.2rem;
+    } 
+  .desc-block div {
+    box-shadow: 3px 3px 5px #cfcfcf;
+    }  
+
+    .desc-block div:hover {
+    box-shadow: 4px 4px 2px #acacac;
+    border: 0.5px solid #acacac;
+}
+
+    .desc-block {
+        gap: 2.5vw;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .full-description .order-btn {
+    margin: 1.5em auto;
+    font-size: 1.125rem;
+    height: 2em;
+    width: 90%;
+    }
+}
+}
